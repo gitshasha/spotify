@@ -1,0 +1,224 @@
+const genre = [
+  "acoustic",
+  "afrobeat",
+  "alt - rock",
+  "alternative",
+  "ambient",
+  "anime",
+  "black - metal",
+  "bluegrass",
+  "blues",
+  "bossanova",
+  "brazil",
+  "breakbeat",
+  "british",
+  "cantopop",
+  "chicago - house",
+  "children",
+  "chill",
+  "classical",
+  "club",
+  "comedy",
+  "country",
+  "dance",
+  "dancehall",
+  "death - metal",
+  " deep - house",
+  "detroit - techno",
+  "disco",
+  "disney",
+  "drum - and - bass",
+  "dub",
+  "dubstep",
+  "edm",
+  "electro",
+  "electronic",
+  "emo",
+  "folk",
+  "forro",
+  "french",
+  "funk",
+  "garage",
+  "german",
+  "gospel",
+  "goth",
+  "grindcore",
+  "groove",
+  "grunge",
+  "guitar",
+  "happy",
+  "hard - rock",
+  "hardcore",
+  "hardstyle",
+  "heavy - metal",
+  "hip - hop",
+  "holidays",
+  "honky - tonk",
+  "house",
+  "idm",
+  "indian",
+  "indie",
+  " indie - pop",
+  "industrial",
+  "iranian",
+  "j - dance",
+  "j - idol",
+  "j - pop",
+  "j - rock",
+  "jazz",
+  " k - pop",
+  "kids",
+  "latin",
+  "latino",
+  "malay",
+  "mandopop",
+  "metal",
+  " metal - misc",
+  "metalcore",
+  "minimal - techno",
+  "movies",
+  "mpb",
+  "newage",
+  "newrelease",
+  "opera",
+  "pagode",
+  "party",
+  "philippines - opm",
+  "piano",
+  "pop",
+  "pop - film",
+  "post - dubstep",
+  "power - pop",
+  "progressive - house",
+  "psych - rock",
+  "punk",
+  "punk - rock",
+  "r - n - b",
+  "rainy - day",
+  "reggae",
+  "reggaeton",
+  "road - trip",
+  "rock",
+  "rock - n - roll",
+  "rockabilly",
+  "romance",
+  "sad",
+  "salsa",
+  "samba",
+  "sertanejo",
+  "show - tunes",
+  "singer - songwriter",
+  "ska",
+  "sleep",
+  "songwriter",
+  "soul",
+  "soundtracks",
+  "spanish",
+  "study",
+  "summer",
+  "swedish",
+  "synth - pop",
+  "tango",
+  "techno",
+  "trance",
+  "trip - hop",
+  "turkish",
+  "work - out",
+  "world - music",
+];
+for (let i = 0; i < a.length; i++) {
+  for (let j = 0; j < a[i].length; j++) {
+    if (b[a[i][j]] == undefined) {
+      b[a[i][j]] = 1;
+    } else b[a[i][j]]++;
+  }
+}
+
+["modern rock", "rock"][("pop", "uk pop")][
+  ("boy band", "dance pop", "pop", "post-teen pop")
+][("canadian pop", "pop", "viral pop")][
+  ("canadian contemporary r&b",
+  "canadian pop",
+  "dance pop",
+  "pop",
+  "post-teen pop")
+][("dance pop", "electropop", "pop")][
+  ("australian pop", "dance pop", "pop", "tropical house", "uk pop")
+][("dance pop", "piano rock", "pop", "pop rock")][
+  ("boy band", "dance pop", "electropop", "pop", "post-teen pop", "teen pop")
+][
+  ("dance pop", "pop", "pop dance", "post-teen pop", "tropical house", "uk pop")
+][("australian pop", "dance pop", "electropop", "pop", "viral pop")][
+  ("dance pop", "pop", "post-teen pop")
+][("pop", "pop r&b")][("boy band", "dance pop", "pop", "post-teen pop")][
+  ("electropop", "pop", "pop rap")
+][("  nce pop", "edm", "pop", "pop dance", "tropical house", "uk dance")][
+  ("dance pop", "edm", "electropop", "pop", "pop dance", "tropical house")
+][
+  ("dance pop",
+  "edm",
+  "electropop",
+  "pop",
+  "pop dance",
+  "post-teen pop",
+  "scandipop",
+  "swedish electropop",
+  "swedish pop",
+  "tropical house")
+][("j-pop", "j-rock", "japanese emo", "visual kei")][
+  ("alt z", "dream smp", "electropop", "pop")
+]["pop"][("electropop", "pop")][("dance pop", "pop", "viral pop")][
+  ("filmi", "tamil pop")
+][("la pop", "pop")][("dance pop", "pop")][
+  ("canadian contemporary r&b", "canadian pop", "pop")
+]["filmi"][
+  ("alt z",
+  "dance pop",
+  "electropop",
+  "pop",
+  "post-teen pop",
+  "social media pop")
+]["pop"][
+  ("brostep",
+  "dance pop",
+  "edm",
+  "pop",
+  "pop dance",
+  "progressive electro house")
+]["scandipop"][("canadian pop", "pop")][
+  ("dance pop", "electropop", "etherpop", "indie poptimism", "pop")
+][("metropopolis", "modern rock", "pop", "pop rock")][("pop", "pop rap")][
+  ("permanent wave", "pop")
+]["pop"][("dance pop", "pop", "uk pop")][
+  ("alt z",
+  "dance pop",
+  "electropop",
+  "indie poptimism",
+  "nyc pop",
+  "pop",
+  "pop dance",
+  "pop edm",
+  "post-teen pop",
+  "tropical house")
+][("celtic rock", "dance pop", "modern rock", "neo mellow", "pop", "pop rock")][
+  ("dance pop", "pop", "pop dance", "post-teen pop", "tropical house")
+][("dance pop", "pop", "post-teen pop")][
+  ("boy band", "pop", "post-teen pop", "talent show")
+]["electro house"][("pop", "talent show", "uk pop")][
+  ("dance pop", "pop", "post-teen pop")
+][
+  ("chill r&b",
+  "electropop",
+  "indie poptimism",
+  "indietronica",
+  "little rock indie",
+  "pop")
+][("  nce pop", "pop")][
+  ("  nce pop",
+  "edm",
+  "electropop",
+  "indietronica",
+  "metropopolis",
+  "pop",
+  "uk pop")
+];
