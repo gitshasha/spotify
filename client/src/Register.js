@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-function Register({ topgenre, allgenre }) {
-  console.log("adda", allgenre);
+function Register() {
   const [username, setusername] = useState("");
   const [useremail, setuseremail] = useState("");
   const [password, setpassword] = useState("");
@@ -16,12 +15,11 @@ function Register({ topgenre, allgenre }) {
           email: useremail,
           username: username,
           password: password,
-          topgenre: topgenre,
-          genre: allgenre,
         })
         .then((data) => {
           console.log(data);
-          navigate("/users");
+          window.localStorage.setItem("usertoken", data.data._id);
+          navigate("/");
         })
         .catch((err) => {
           console.log(err);

@@ -1,10 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useEffect, useState } from "react";
 import Login from "./Login";
-import Dashboard from "./Dashboard";
+// import Dashboard from "./Dashboard";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Signin from "./Signin";
+import Loginuser from "./Loginuser";
+// import Signin from "./Signin";
 import Register from "./Register";
-import Home from "./Home";
+// import Home from "./Home";
 import Users from "./Users";
 import Userform from "./Userform";
 const code = new URLSearchParams(window.location.search).get("code");
@@ -13,14 +15,13 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={code ? <Dashboard code={code} /> : <Login />}>
-          {" "}
-          <Route path="/users" element={<Users />} />
-          <Route path="/userlogin" element={<Userform />} />{" "}
-          <Route path="/register" element={<Register />} />
-        </Route>
-
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Loginuser />} />
+        <Route path="/register" element={<Register />} />
+        {/* <Route path="/users" element={<Users />} />
+        <Route path="/userlogin" element={<Userform />} />
+         <Route path="/register" element={<Register />} />
+        <Route path="/home" element={<Home />} /> */}
       </Routes>
     </Router>
   );

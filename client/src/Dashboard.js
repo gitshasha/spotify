@@ -10,14 +10,37 @@ import { Link } from "react-router-dom";
 import Userform from "./Userform";
 import Register from "./Register";
 import { useNavigate } from "react-router-dom";
+
 import { Outlet } from "react-router-dom";
 const spotifyApi = new SpotifyWebApi({
   clientId: "db564f6b4a1e41bab7cc3e8b4df55bf7",
 });
 
 function Dashboard({ code }) {
-  const accessToken = useAuth(code);
-  console.log(accessToken);
+  // const accessToken = useAuth(code);
+  const [accessToken, setAccessToken] = useState(
+    window.localStorage.getItem("accesstoken")
+  );
+  const [token, settoken] = useState(window.localStorage.getItem("token"));
+  useEffect(() => {
+    const acc = window.localStorage.getItem("accesstoken");
+    if (acc === null) {
+      axios
+        .post("http://localhost:3001/login", {
+          code,
+        })
+        .then((res) => {
+          setAccessToken(res.data.accessToken);
+          window.localStorage.setItem("accesstoken", res.data.accessToken);
+          // setRefreshToken(res.data.refreshToken);
+          // setExpiresIn(res.data.expiresIn);
+          window.history.pushState({}, null, "/");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [code]);
   const [search, setSearch] = useState("");
   const [allgenre, setallgenre] = useState([]);
   const [genrescore, setgenrescore] = useState([]);
@@ -106,10 +129,10 @@ function Dashboard({ code }) {
       }
     );
   }, [accessToken]);
-
+  console.log(allgenre);
   return (
     <div style={{ height: "100vh" }}>
-      <Button
+      {/* <Button
         onClick={() => {
           spotifyApi.getMyTopTracks({ limit: 20 }).then(
             function (data) {
@@ -123,8 +146,8 @@ function Dashboard({ code }) {
         }}
       >
         ooop
-      </Button>
-      <Form.Control
+      </Button> */}
+      {/* <Form.Control
         type="search"
         placeholder="Search Songs/Artists"
         value={search}
@@ -138,31 +161,28 @@ function Dashboard({ code }) {
             chooseTrack={chooseTrack}
           />
         ))}
-      </div>
+      </div> */}
 
       <Circle genrescore={genrescore} />
       <Button
         onClick={() => {
-          navigate("/userlogin");
+          const user = window.localStorage.getItem("usertoken");
+          axios
+            .put(`http://localhost:3001/api/users/${user}`, {
+              userId: user,
+              genre: allgenre,
+              topgenre: genrescore,
+            })
+            .then((data) => {
+              console.log(data);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
         }}
       >
-        Login
+        Submit
       </Button>
-      <Button
-        onClick={() => {
-          navigate("/register");
-        }}
-      >
-        Register
-      </Button>
-
-      {/* <div>
-        <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
-      </div> */}
-
-      <div className="optionoutlet">
-        <Outlet />
-      </div>
     </div>
   );
 }
